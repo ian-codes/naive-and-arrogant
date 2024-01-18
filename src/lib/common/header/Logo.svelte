@@ -60,6 +60,7 @@
     }
 
     #logo:hover {
+        box-shadow: none;
         animation: intro 1s ease;
     }
 

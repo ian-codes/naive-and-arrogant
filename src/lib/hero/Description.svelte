@@ -8,11 +8,10 @@
 <style>
     p {
         flex: 1;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         letter-spacing: 1px;
-        font-weight: bold;
-
+        font-weight: lighter;
         line-height: 1.4em;
-        text-align: center;
+        margin: 2rem 0;
     }
 </style>

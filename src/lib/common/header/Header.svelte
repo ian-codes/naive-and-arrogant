@@ -17,7 +17,8 @@
 
 <style>
     header {
-        margin: 4rem auto;
+        padding: 2rem 0;
+        margin: auto;
         max-width: var(--max-width);
 
         display: flex;

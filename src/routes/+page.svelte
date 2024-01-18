@@ -6,9 +6,12 @@
 
 
 <div class="outer-container">
-    <PhaseOne />
+    <!-- 
+        <PhaseOne />
+    -->
     <HeroSection />
 </div>
+
 <!-- <Twitter /> -->
 
 

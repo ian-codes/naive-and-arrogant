@@ -3,18 +3,17 @@
 </script>
 
 
-
-<div class="bg-texture" />
+<div class="bg-texture"></div>
 
 
 <style>
     .bg-texture {
-        position: absolute;
-        inset: 0;
         z-index: -5;
         pointer-events: none;
-
-        background-image: url('background/texture.jpg');
+        position: absolute;
+        inset: 0;
+        background-image: url('background/bg.jpg');
+        background-repeat: repeat-y;
         background-size: cover;
         background-position: center;
         opacity: .5;
