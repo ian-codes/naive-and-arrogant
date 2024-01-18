@@ -1,3 +1,7 @@
+<script>
+    export let isHovered;
+</script>
+
 
 <a class="call-to-action" href="#">
     MINT NOW

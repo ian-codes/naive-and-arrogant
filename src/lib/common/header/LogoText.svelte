@@ -1,9 +1,3 @@
-<!-- <h1>
-    Naive
-    <span>&</span>
-    Arrogant
-</h1> -->
-
 <div id="text-logo" />
 
 
@@ -15,21 +9,13 @@
         background-repeat: no-repeat;
         width: 400px;
         mix-blend-mode: darken;
+        transition: all .3s ease;
+        cursor: pointer;
         /* mix-blend-mode: lighten;
         filter: invert(1); */
     }
 
-    span {
-        font-size: 3rem;
-    }
-
-    h1 {
-        padding: 1rem;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        font-size: 3.5rem;
-        letter-spacing: -3px;
-        text-transform: uppercase;
-        font-weight: bold;
+    #text-logo:hover {
+        filter: invert(1) drop-shadow(5px 5px 0 rgba(0, 0, 0, 0.436));
     }
 </style>

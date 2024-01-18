@@ -1,5 +1,7 @@
 <script>
     import Incentive from "./Incentive.svelte";
+
+    let isHovered = false;
 </script>
 
 
@@ -20,8 +22,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.9);
-
+        box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8);
 
         cursor: pointer;
         transition: all .1s ease;
@@ -30,8 +31,7 @@
     .hero:hover {
         transform: scale(1.1);
         animation: hue 5s infinite linear;
-        /* box-shadow: 30px 50px 10px rgba(0, 0, 0, 0.9); */
-        box-shadow: -30px 30px 0 rgba(0, 0, 0, 0.9);
+        box-shadow: -30px 30px 0 rgba(0, 0, 0, 0.8);
     }
 
 
