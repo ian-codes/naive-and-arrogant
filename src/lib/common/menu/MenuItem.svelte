@@ -1,4 +1,5 @@
 <script>
+    import { base } from "$app/paths";
     import { onMount } from "svelte";
 
     export let item;
@@ -11,7 +12,7 @@
 
 
 <li>
-    <a class="{anchorClass}" href="{item}">
+    <a class="{anchorClass}" href="{base}/{item}">
         {item}
         <span class="arrow"></span>
     </a>
