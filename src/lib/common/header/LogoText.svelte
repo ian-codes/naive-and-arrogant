@@ -1,13 +1,20 @@
-<div id="text-logo" />
+<a href="/">
+    <div id="text-logo"></div>
+</a>
 
 
 <style>
+    a {
+        display: block;
+    }
+
     #text-logo {
         background-image: url('brand/text-logo.jpeg');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         width: 400px;
+        height: 100%;
         mix-blend-mode: darken;
         transition: all .3s ease;
         cursor: pointer;

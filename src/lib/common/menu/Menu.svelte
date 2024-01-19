@@ -1,16 +1,13 @@
 <script>
+    import { page } from '$app/stores';
     import Burger from "./Burger.svelte";
+    import MenuItem from './MenuItem.svelte';
 
     const menuPoints = ["Phase One", "Roadmap", "Lore", "FAQ"];
     let slugs = menuPoints.map((mp) => mp.toLowerCase().replace(' ', '-'));
 
-    let currentlyVisited = "phase-one";
+    let currentlyVisited = $page.url.pathname.substring(1);
     let isMenuOpen = false;
-
-    function isCurrentlyVisited(link) {
-        console.log(link);
-        return currentlyVisited == link;
-    }
 
     function handleClick() {
         isMenuOpen = !isMenuOpen;
@@ -26,12 +23,7 @@
     <nav>
         <ol class:open={isMenuOpen}>
             {#each slugs as slug}
-                <li>
-                    <a class="{isCurrentlyVisited(slug) ? "current" : ""}" href="{slug}">
-                        {slug}
-                        <span class="arrow"></span>
-                    </a>
-                </li>
+                <MenuItem item={slug} bind:currentItem={currentlyVisited} />
             {/each}
         </ol>
     
@@ -50,37 +42,6 @@
         .container {
             align-items: end !important;
         }
-    }
-
-    a.current::before {
-        content: '';
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        border-radius: 100%;
-        left: -1em;
-        top: calc(100% / 2 - 3px);
-        background: var(--clr-main) !important;
-    }
-
-    a::after {
-        position: absolute;
-        background-image: url("icon/arrow.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        content: '';
-
-        height: 100%;
-        width: 40px;
-        right: -2em;
-        top: 0;
-
-        opacity: 0;
-        pointer-events: none;
-        transition: all .3s ease;
-
-        filter: invert(1);
     }
 
     .container {
@@ -123,33 +84,6 @@
         width: 100% !important;
     }
 
-    a {
-        color: white;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: .3em;
-
-        background: black;
-        padding: 12px 1em;
-        border-radius: 10px / 20px;
-        transition: all .2s ease;
-    }
-
-    a:hover {
-        background: white;
-        color: var(--clr-main);
-        box-shadow: 0 -2px 0 inset var(--clr-main), 0 0 30px rgba(255, 255, 255, 0.3);
-    }
-
-    a:hover::after {
-        opacity: 1;
-    }
-
     .menu-button {
         color: black;
         font-size: .8em;
@@ -161,7 +95,7 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.201);
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
-        transition: all .1s ease;
+        transition: all .2s ease;
     }
 
     .menu-button:hover {
