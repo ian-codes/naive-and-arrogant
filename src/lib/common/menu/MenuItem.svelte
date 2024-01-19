@@ -1,13 +1,15 @@
 <script>
     import { base } from "$app/paths";
-    import { onMount } from "svelte";
+    import { page } from '$app/stores';
 
     export let item;
-    export let currentItem;
 
-    let anchorClass = currentItem == item ? "current" : "";
+    let currentlyVisited = $page.url.pathname.split('/').pop();
 
-    onMount(() => console.log(currentItem));
+    let anchorClass = currentlyVisited == item ? "current" : "";
+
+    console.log("currentlyVisited: " + currentlyVisited);
+    console.log("item: " + item);
 </script>
 
 
