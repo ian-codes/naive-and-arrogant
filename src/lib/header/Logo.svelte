@@ -52,7 +52,7 @@
         cursor: pointer;
         border-radius: 100%;
         box-shadow: 0 2px 3px rgba(0, 0, 0, 0.329);
-        background-image: url('brand/logo.jpg');
+        background-image: url('$lib/header/logo.jpg');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;

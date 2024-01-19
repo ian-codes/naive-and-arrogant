@@ -1,7 +1,4 @@
-<script>
-    import Logo from "./header/Logo.svelte";
 
-</script>
 
 <div class="outer-container">
     <div class="container">
@@ -32,7 +29,7 @@
     }
 
     .logo {
-        background-image: url("brand/logo.jpg");
+        background-image: url("$lib/header/logo.jpg");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
