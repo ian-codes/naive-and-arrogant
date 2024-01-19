@@ -7,7 +7,8 @@ export default {
 
 	kit: {
 		paths: {
-			base: '/naive-and-arrogant'
+			base: '/naive-and-arrogant',
+			relative: false
 		},
 
 
