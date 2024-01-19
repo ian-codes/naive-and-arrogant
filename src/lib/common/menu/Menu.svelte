@@ -7,14 +7,14 @@
 
     let isMenuOpen = false;
 
-    function handleClick() {
+    function handleMenuClick() {
         isMenuOpen = !isMenuOpen;
     }
 </script>
 
 
 {#if isMenuOpen}
-    <div class="backdrop"></div>
+    <div class="backdrop" on:click={() => {isMenuOpen = false}}></div>
 {/if}
 
 <div class="container">
@@ -25,7 +25,7 @@
             {/each}
         </ol>
     
-        <button class="menu-button" class:expanded={isMenuOpen} on:click={handleClick}>
+        <button class="menu-button" class:expanded={isMenuOpen} on:click={handleMenuClick}>
             Menu
             <Burger isMenuOpen={isMenuOpen} />
         </button>
@@ -36,24 +36,22 @@
 
 
 <style>
-    @media (max-width: 1100px) {
-        .container {
-            align-items: end !important;
-        }
-    }
-
     .container {
-        z-index: 2;
-        position: fixed;
+        z-index: 3;
         bottom: 0;
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: end;
+        justify-content: center;
         align-items: center;
+        background: red;
+        
     }
 
     nav {
+        z-index: 2;
+        position: fixed;
+        bottom: 0;
         width: max-content;
         display: flex;
         flex-direction: column;

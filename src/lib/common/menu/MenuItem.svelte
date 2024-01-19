@@ -4,12 +4,9 @@
 
     export let item;
 
-    let currentlyVisited = $page.url.pathname.split('/').pop();
+    $: currentlyVisited = $page.url.pathname.split('/').pop();
 
-    let anchorClass = currentlyVisited == item ? "current" : "";
-
-    console.log("currentlyVisited: " + currentlyVisited);
-    console.log("item: " + item);
+    $: anchorClass = currentlyVisited == item ? "current" : "";
 </script>
 
 
@@ -48,6 +45,7 @@
 
     a:hover::after {
         opacity: 1;
+        animation: arrow 2s linear infinite;
     }
 
 
@@ -79,6 +77,20 @@
         pointer-events: none;
         transition: all .3s ease;
 
-        filter: invert(1);
+    }
+
+    @keyframes arrow {
+        0% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+        50% {
+            transform: translateX(20px);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 0;
+        }
     }
 </style>

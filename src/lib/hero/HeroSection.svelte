@@ -18,6 +18,8 @@
         display: flex;
         flex-direction: column;
         animation: appear forwards 3s ease;
+        width: 100%;
+        max-width: 100vw;
     }
 
     @keyframes appear {

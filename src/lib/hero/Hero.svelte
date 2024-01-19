@@ -14,16 +14,15 @@
     .hero {
         flex: 1;
         margin: auto;
-        width: 500px;
+        width: 100%;
+
         aspect-ratio: 1;
         overflow: hidden;
-
         background-image: url('$lib/hero/hero.jpeg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8);
-
         cursor: pointer;
         transition: all .1s ease;
     }
