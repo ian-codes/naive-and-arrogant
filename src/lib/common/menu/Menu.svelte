@@ -1,12 +1,10 @@
 <script>
-    import { page } from '$app/stores';
     import Burger from "./Burger.svelte";
     import MenuItem from './MenuItem.svelte';
 
     const menuPoints = ["Phase One", "Roadmap", "Lore", "FAQ"];
     let slugs = menuPoints.map((mp) => mp.toLowerCase().replace(' ', '-'));
 
-    let currentlyVisited = $page.url.pathname.substring(1);
     let isMenuOpen = false;
 
     function handleClick() {
@@ -23,7 +21,7 @@
     <nav>
         <ol class:open={isMenuOpen}>
             {#each slugs as slug}
-                <MenuItem item={slug} bind:currentItem={currentlyVisited} />
+                <MenuItem item={slug} />
             {/each}
         </ol>
     
