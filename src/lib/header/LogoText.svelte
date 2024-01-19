@@ -9,7 +9,7 @@
     }
 
     #text-logo {
-        background-image: url('brand/text-logo.jpeg');
+        background-image: url('$lib/header/text-logo.jpeg');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;

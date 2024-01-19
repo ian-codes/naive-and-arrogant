@@ -18,7 +18,7 @@
         aspect-ratio: 1;
         overflow: hidden;
 
-        background-image: url('img/hero.jpeg');
+        background-image: url('$lib/hero/hero.jpeg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;

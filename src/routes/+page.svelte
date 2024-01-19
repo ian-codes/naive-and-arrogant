@@ -1,7 +1,7 @@
 <script>
-    import Twitter from "../lib/common/Twitter.svelte";
-    import HeroSection from "../lib/hero/HeroSection.svelte";
-    import PhaseOne from "../lib/PhaseOne.svelte";
+    import Twitter from "$lib/common/Twitter.svelte";
+    import HeroSection from "$lib/hero/HeroSection.svelte";
+    import PhaseOne from "$lib/PhaseOne.svelte";
 </script>
 
 
