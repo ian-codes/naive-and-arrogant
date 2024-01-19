@@ -9,11 +9,21 @@
 <Loading />
 <Background />
 
+<div class="outer-container">
+    <Header />
+    <main>
+        <slot>
+    
+        </slot>
+    </main>
+    <Menu />
+</div>
 
-<Header />
-<main>
-    <slot>
 
-    </slot>
-</main>
-<Menu />
+<style>
+    .outer-container {
+        padding: 0 1rem;
+        max-width: var(--max-width);
+        margin: auto;
+    }
+</style>
