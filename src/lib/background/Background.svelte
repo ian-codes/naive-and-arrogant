@@ -12,7 +12,7 @@
         pointer-events: none;
         position: absolute;
         inset: 0;
-        background-image: url('background/bg.jpg');
+        background-image: url('$lib/background/bg.jpg');
         background-repeat: repeat-y;
         background-size: cover;
         background-position: center;
