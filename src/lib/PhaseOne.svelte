@@ -49,7 +49,6 @@
     }
 
     .arrow {
-        background-image: url('arrow.svg');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;

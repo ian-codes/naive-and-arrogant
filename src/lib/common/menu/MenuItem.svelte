@@ -61,7 +61,7 @@
 
     a::after {
         position: absolute;
-        background-image: url("icon/arrow.svg");
+        background-image: url("$lib/common/menu/arrow.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
