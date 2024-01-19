@@ -1,4 +1,10 @@
-<a href="/">
+<script>
+    import { base } from "$app/paths";
+</script>
+
+
+
+<a href="{base}">
     <div id="text-logo"></div>
 </a>
 
