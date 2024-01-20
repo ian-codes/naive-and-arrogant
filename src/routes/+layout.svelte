@@ -22,7 +22,7 @@
 
 <style>
     .outer-container {
-        padding: 0 1rem;
+        padding: 0 2rem;
         max-width: var(--max-width);
         margin: auto;
     }

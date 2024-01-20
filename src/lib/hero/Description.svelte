@@ -1,5 +1,6 @@
 <p>
-    500 handcrafted, unique pieces.
+    500 handcrafted,
+    <b>unique</b> pieces.
     <br>
     Now available to mint.
 </p>
@@ -7,11 +8,9 @@
 
 <style>
     p {
-        flex: 1;
-        font-size: 1.4rem;
-        letter-spacing: 1px;
-        font-weight: lighter;
-        line-height: 1.4em;
-        margin: 2rem 0;
+        width: 100%;
+        font-size: 2.2rem;
+        font-weight: normal;
+        line-height: 1.5em;
     }
 </style>

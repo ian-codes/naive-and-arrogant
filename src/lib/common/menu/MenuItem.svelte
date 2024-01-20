@@ -2,16 +2,21 @@
     import { base } from "$app/paths";
     import { page } from '$app/stores';
 
+    export let isMenuOpen;
     export let item;
 
     $: currentlyVisited = $page.url.pathname.split('/').pop();
 
     $: anchorClass = currentlyVisited == item ? "current" : "";
+
+    function handleClick() {
+        isMenuOpen = false;
+    }
 </script>
 
 
 <li>
-    <a class="{anchorClass}" href="{base}/{item}">
+    <a on:click={handleClick} class="{anchorClass}" href="{base}/{item}">
         {item}
         <span class="arrow"></span>
     </a>
@@ -23,7 +28,7 @@
     a {
         color: white;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 5px;
 
         position: relative;
         display: flex;
@@ -32,15 +37,16 @@
         gap: .3em;
 
         background: black;
-        padding: 12px 1em;
-        border-radius: 10px / 20px;
+        padding: .8em 1em;
+        border-radius: 10px / 40px;
         transition: all .2s ease;
+        box-shadow: 0 -2px 0 inset var(--clr-main), 0 0 30px rgba(0, 0, 0, 0.3);
     }
 
     a:hover {
         background: white;
         color: var(--clr-main);
-        box-shadow: 0 -2px 0 inset var(--clr-main), 0 0 30px rgba(255, 255, 255, 0.3);
+
     }
 
     a:hover::after {

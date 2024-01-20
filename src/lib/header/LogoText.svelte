@@ -27,7 +27,7 @@
         background-position: center;
         background-repeat: no-repeat;
         width: 120px;
-        height: 100%;
+        height: 100px;
         mix-blend-mode: darken;
         transition: all .1s ease;
         cursor: pointer;

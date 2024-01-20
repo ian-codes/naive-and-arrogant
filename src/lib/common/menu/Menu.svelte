@@ -6,9 +6,18 @@
     let slugs = menuPoints.map((mp) => mp.toLowerCase().replace(' ', '-'));
 
     let isMenuOpen = false;
+    let isHovered = false;
 
     function handleMenuClick() {
         isMenuOpen = !isMenuOpen;
+    }
+
+    function handleHover() {
+        isHovered = !isHovered;
+    }
+
+    function handleBlur() {
+        isHovered = false;
     }
 </script>
 
@@ -21,7 +30,7 @@
     <nav>
         <ol class:open={isMenuOpen}>
             {#each slugs as slug}
-                <MenuItem item={slug} />
+                <MenuItem item={slug} bind:isMenuOpen={isMenuOpen} />
             {/each}
         </ol>
     
@@ -58,6 +67,7 @@
         justify-content: center;
         align-items: center;
         padding: 0 1em;
+        gap: 1em;
     }
 
     ol {
@@ -68,7 +78,7 @@
         justify-content: center;
         list-style: none;
         transition: all .2s ease;
-        gap: .3em;
+        gap: .5em;
         width: 0;
         font-size: 0;
     }
@@ -88,10 +98,11 @@
         background: white;
         border: none;
         padding: 1em;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.201);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
         transition: all .2s ease;
+        border: 1px solid var(--clr-main);
     }
 
     .menu-button:hover {
