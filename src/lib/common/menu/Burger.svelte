@@ -24,6 +24,10 @@
         flex-direction: row !important;
     }
 
+    .hover {
+        background: white !important;
+    }
+
     .line {
         background: black;
         width: 100%;
