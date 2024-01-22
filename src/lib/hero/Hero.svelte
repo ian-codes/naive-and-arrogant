@@ -35,7 +35,7 @@ on:focus={handleHover} on:blur={handleHover} role="main">
     .hero:hover {
         transform: scale(1.1);
         animation: hue 5s infinite linear;
-        box-shadow: -30px 30px 0 rgba(0, 0, 0, 0.8);
+        box-shadow: -20px 20px 0 rgba(0, 0, 0, 0.8);
     }
 
 

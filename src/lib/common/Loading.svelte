@@ -22,7 +22,7 @@
 
     .img {
         z-index: 1;
-        display: block;
+        display: none;
         position: fixed;
         inset: 0;
         background-image: url('$lib/background/fg.png');
@@ -68,7 +68,7 @@
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-        width: 140px;
+        width: 100px;
         aspect-ratio: 1;
         border-radius: 100%;
         margin-bottom: 2rem;
