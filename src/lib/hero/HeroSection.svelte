@@ -17,12 +17,10 @@
         flex-direction: column;
         align-items: center;
         gap: 3rem;
-
         animation: appear forwards 3s ease;
         width: 100%;
         max-width: 100vw;
         margin-bottom: 10rem;
-        min-height: 100vh;
     }
 
     @keyframes appear {

@@ -3,6 +3,7 @@
     import Menu from "$lib/common/menu/Menu.svelte";
     import Background from "$lib/background/Background.svelte";
     import Loading from "$lib/common/Loading.svelte";
+    import Twitter from "$lib/common/Twitter.svelte";
 </script>
 
 
@@ -11,12 +12,13 @@
 
 <div class="outer-container">
     <Header />
-    <main>
-        <slot>
-    
-        </slot>
-    </main>
+        <main>
+            <slot>
+        
+            </slot>
+        </main>
     <Menu />
+    <Twitter />
 </div>
 
 
