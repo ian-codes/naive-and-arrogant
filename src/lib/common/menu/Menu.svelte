@@ -9,7 +9,6 @@
     let menuItems = slugs.map((menuPoint, index) => [menuPoint, decoration[index]]);
 
     let isMenuOpen = false;
-    let isHovered = false;
 
     function handleMenuClick() {
         isMenuOpen = !isMenuOpen;
@@ -75,7 +74,6 @@
         width: 0;
         font-size: 0;
     }
-
     ol.open {
         overflow: visible !important;
         font-size: 1em;
@@ -99,11 +97,9 @@
         cursor: pointer;
         transition: all .2s ease;
     }
-
     .menu-button:hover {
         filter: invert(1);
     }
-
     .menu-button.expanded {
         padding: 1em 3em;
         border-radius: 0;
