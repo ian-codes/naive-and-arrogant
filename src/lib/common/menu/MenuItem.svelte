@@ -62,7 +62,7 @@
 
         background: black;
         padding: .8em 1em;
-        box-shadow: 0 -2px 0 inset var(--clr-main), 0 0 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 -2px 0 inset var(--clr-main), 0 0 50px rgba(0, 0, 0, 0.2);
         /* border-radius: 10px / 40px; */
 
         transition: all .2s ease;
@@ -81,9 +81,10 @@
         width: 100%;
         position: absolute;
         background: var(--clr-main);
+        box-shadow: 0 -20px 10px rgba(0, 0, 0, 0.05) inset
+        , 0 20px 10px rgba(255, 255, 255, 0.05) inset;
         height: 0;
         z-index: 1;
-
         transition: all .1s;
     }
     a:hover .bg {
@@ -128,11 +129,11 @@
             opacity: 0;
         }
         50% {
-            transform: translateX(20px);
+            transform: translateX(15px);
             opacity: 1;
         }
         100% {
-            transform: translateX(0);
+            transform: translateX(20px);
             opacity: 0;
         }
     }
