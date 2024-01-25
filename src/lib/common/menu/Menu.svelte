@@ -3,21 +3,16 @@
     import MenuItem from './MenuItem.svelte';
 
     const menuPoints = ["Phase One", "Roadmap", "Lore", "FAQ"];
+    const decoration = ["n", "+", "a", "-"];
+
     let slugs = menuPoints.map((mp) => mp.toLowerCase().replace(' ', '-'));
+    let menuItems = slugs.map((menuPoint, index) => [menuPoint, decoration[index]]);
 
     let isMenuOpen = false;
     let isHovered = false;
 
     function handleMenuClick() {
         isMenuOpen = !isMenuOpen;
-    }
-
-    function handleHover() {
-        isHovered = !isHovered;
-    }
-
-    function handleBlur() {
-        isHovered = false;
     }
 </script>
 
@@ -29,8 +24,8 @@
 <div class="container">
     <nav>
         <ol class:open={isMenuOpen}>
-            {#each slugs as slug}
-                <MenuItem item={slug} bind:isMenuOpen={isMenuOpen} />
+            {#each menuItems as menuItem}
+                <MenuItem slug={menuItem[0]} deco={menuItem[1]} bind:isMenuOpen={isMenuOpen} />
             {/each}
         </ol>
     
@@ -52,9 +47,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        background: red;
-        
+        align-items: center;        
     }
 
     nav {
@@ -91,18 +84,20 @@
     }
 
     .menu-button {
-        color: black;
         font-size: .8em;
         text-transform: uppercase;
-        cursor: pointer;
+
+        color: black;
         background: white;
-        border: none;
+        border: 1px solid var(--clr-main);
+
         padding: 1em;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
+
+        cursor: pointer;
         transition: all .2s ease;
-        border: 1px solid var(--clr-main);
     }
 
     .menu-button:hover {
