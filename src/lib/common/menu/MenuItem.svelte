@@ -60,17 +60,23 @@
         justify-content: space-between;
         gap: .3em;
 
-        background: black;
+        background: linear-gradient(black, rgba(0, 0, 0, 0.1));
         padding: .8em 1em;
-        box-shadow: 0 -2px 0 inset var(--clr-main), 0 0 50px rgba(0, 0, 0, 0.2);
-        /* border-radius: 10px / 40px; */
+        box-shadow: 0 -2px 0 inset var(--clr-main), 0 0 50px rgba(0, 0, 0, 0.2)
+        , 0 10px 30px rgba(33, 146, 221, 0.2);
 
-        transition: all .2s ease;
+        transition: var(--transition);
     }
-
-    a:hover .link {
-        color: black;
+    a::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--gradient-main-h);
     }
+    
     .link {
         z-index: 3;
     }
@@ -80,30 +86,19 @@
         left: 0;
         width: 100%;
         position: absolute;
-        background: var(--clr-main);
-        box-shadow: 0 -20px 10px rgba(0, 0, 0, 0.05) inset
-        , 0 20px 10px rgba(255, 255, 255, 0.05) inset;
-        height: 0;
+        background: var(--gradient-main);
         z-index: 1;
-        transition: all .1s;
+
+        height: 0;
+        transition: var(--transition-fast);
     }
     a:hover .bg {
         height: 100%;
     }
     a:hover::after {
-        opacity: 1;
-        animation: arrow 2s linear infinite;
+        animation: arrow 2s ease infinite;
+        animation-delay: .2s;
     }
-    /* a.current::before {
-        content: '';
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        border-radius: 100%;
-        left: -1em;
-        top: calc(100% / 2 - 3px);
-        background: var(--clr-main) !important;
-    } */
     a::after {
         position: absolute;
         background-image: url("$lib/common/menu/arrow.svg");
@@ -120,8 +115,6 @@
 
         opacity: 0;
         pointer-events: none;
-        transition: all .2s ease;
-
     }
     @keyframes arrow {
         0% {
@@ -129,11 +122,11 @@
             opacity: 0;
         }
         50% {
-            transform: translateX(15px);
+            transform: translateX(10px);
             opacity: 1;
         }
         100% {
-            transform: translateX(20px);
+            transform: translateX(15px);
             opacity: 0;
         }
     }

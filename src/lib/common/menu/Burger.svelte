@@ -20,22 +20,15 @@
         align-items: center;
         justify-content: space-evenly;
     }
-
     .open {
         flex-direction: row !important;
     }
-
-    .hover {
-        background: white !important;
-    }
-
     .line {
-        background: black;
+        background: white;
         width: 100%;
         height: 2px;
-        transition: all .1s ease;
+        transition: var(--transition-fast);
     }
-
     .dots {
         background: white;
         width: 2px;
