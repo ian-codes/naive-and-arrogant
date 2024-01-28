@@ -1,3 +1,8 @@
+<svelte:head>
+	<title>Home</title>
+</svelte:head>
+
+
 <script>
     import { goto } from "$app/navigation";
     import { base } from "$app/paths";
