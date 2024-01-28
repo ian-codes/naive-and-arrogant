@@ -60,7 +60,7 @@
         justify-content: space-between;
         gap: .3em;
 
-        background: linear-gradient(black, rgba(0, 0, 0, 0.1));
+        background: black;
         padding: .8em 1em;
         box-shadow: 0 -2px 0 inset var(--clr-main), 0 0 50px rgba(0, 0, 0, 0.2)
         , 0 10px 30px rgba(33, 146, 221, 0.2);

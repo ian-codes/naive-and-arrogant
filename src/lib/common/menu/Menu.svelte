@@ -152,7 +152,7 @@
             opacity: 0;
         }
         100% {
-            opacity: .7;
+            opacity: .8;
         }
     }
 </style>
