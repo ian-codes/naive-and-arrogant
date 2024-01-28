@@ -58,7 +58,6 @@
         justify-content: center;
         align-items: center;        
     }
-
     nav {
         z-index: 2;
         position: fixed;
@@ -69,47 +68,39 @@
         justify-content: center;
         align-items: center;
         padding: 0 1em;
-        gap: 1em;
+        gap: 2em;
     }
-
     ol {
+        font-size: 1em;
         overflow: hidden;
-        height: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         list-style: none;
-        transition: all .2s ease;
-        gap: .5em;
-        width: 0;
-        font-size: 0;
+        gap: 1em;
+        width: 100%;
+
+        transition: var(--transition);
+        height: 0;
+        opacity: 0;
     }
     ol.open {
         overflow: visible !important;
-        font-size: 1em;
         height: 250px !important;
         width: 100% !important;
+        opacity: 1 !important;
     }
-
     .menu-button {
-        font-size: .8em;
+        z-index: 5;
+        position: relative;
+        font-size: .8rem;
         text-transform: uppercase;
-
-        color: black;
-        background: white;
-        border: 1px solid var(--clr-main);
-
+        font-weight: bold;
+        color: white;
         padding: 1em;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         cursor: pointer;
         transition: all .2s ease;
-    }
-    .menu-button:hover {
-        background: black;
-        color: white;
     }
     .menu-button.expanded {
         padding: 1em 3em;
@@ -118,20 +109,50 @@
         color: white;
     }
 
+    .menu-button::before {
+        z-index: -4;
+        content: '';
+        top: -2px;
+        left: -2px;
+        position: absolute;
+        height: calc(100% + 4px);
+        width: calc(100% + 4px);
+        background: var(--gradient-main);
+    }
+    
+    .menu-button::after {
+        z-index: -3;
+        position: absolute;
+        bottom: 0;
+        inset: 0;
+        content: '';
+        background: black;
+
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        transition: all .3s ease;
+    }
+    .menu-button:hover::after {
+        opacity: 0;
+        width: 0;
+        right: 50%;
+        left: 50%;
+    }
+
     .backdrop {
         position: absolute;
         inset: 0;
         z-index: 1;
         background: black;
-        animation: backdrop forwards ease .2s;
+        animation: backdrop forwards ease .4s;
     }
-
     @keyframes backdrop {
         0% {
             opacity: 0;
         }
         100% {
-            opacity: .8;
+            opacity: .7;
         }
     }
 </style>
