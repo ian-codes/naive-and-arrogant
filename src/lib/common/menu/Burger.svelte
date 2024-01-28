@@ -1,11 +1,12 @@
 <script>
     export let isMenuOpen;
+    export let isHovered;
 </script>
 
 
 <div id="burger" class:open={isMenuOpen}>
     {#each {length: 3} as _}
-        <span class:dots={isMenuOpen} class="line"></span>
+        <span class:dots={isMenuOpen} class:hover={isHovered} class="line"></span>
     {/each}
 </div>
 

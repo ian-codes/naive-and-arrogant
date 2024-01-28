@@ -9,9 +9,14 @@
     let menuItems = slugs.map((menuPoint, index) => [menuPoint, decoration[index]]);
 
     let isMenuOpen = false;
+    let isHovered = false;
 
     function handleMenuClick() {
         isMenuOpen = !isMenuOpen;
+    }
+
+    function handleHover() {
+        isHovered = !isHovered;
     }
 </script>
 
@@ -28,9 +33,14 @@
             {/each}
         </ol>
     
-        <button class="menu-button" class:expanded={isMenuOpen} on:click={handleMenuClick}>
+        <button class="menu-button" class:expanded={isMenuOpen} 
+        on:click={handleMenuClick}
+        on:mouseover={handleHover}
+        on:mouseout={handleHover}
+        on:focus={handleHover}
+        on:blur={handleHover}>
             Menu
-            <Burger isMenuOpen={isMenuOpen} />
+            <Burger isMenuOpen={isMenuOpen} bind:isHovered={isHovered} />
         </button>
     </nav>
 </div>
@@ -98,7 +108,8 @@
         transition: all .2s ease;
     }
     .menu-button:hover {
-        filter: invert(1);
+        background: black;
+        color: white;
     }
     .menu-button.expanded {
         padding: 1em 3em;
@@ -111,7 +122,7 @@
         position: absolute;
         inset: 0;
         z-index: 1;
-        background: white;
+        background: black;
         animation: backdrop forwards ease .2s;
     }
 
