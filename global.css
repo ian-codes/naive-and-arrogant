@@ -12,7 +12,14 @@
 :root {
     font-size: 18px;
     --max-width: 700px;
+
     --clr-main: rgb(18, 190, 248);
+    --clr-2: rgb(9, 116, 217);
+    --gradient-main: linear-gradient(var(--clr-main), var(--clr-2));
+    --gradient-main-h: linear-gradient(90deg, var(--clr-main), var(--clr-2));
+
+    --transition: all .5s ease;
+    --transition-fast: all .2s ease;
 }
 
 body {
@@ -30,7 +37,8 @@ button {
 }
 
 *::selection {
-    color: red;
+    color: var(--clr-main);
+    background: rgba(0, 0, 0, 0.836);
 }
 
 a {
