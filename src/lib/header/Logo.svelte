@@ -3,13 +3,16 @@
 </script>
 
 
-<div id="logo" class="{$isPhaseOne ? 'lamp' : ''}">
-    {#if $isPhaseOne}
-    <div class="shadow left" />
-    <div class="shadow right" />
-    <div class="glow" />
-    {/if}
-</div>
+<a href="/">
+    <div id="logo" class="{$isPhaseOne ? 'lamp' : ''}">
+        {#if $isPhaseOne}
+        <div class="shadow left" />
+        <div class="shadow right" />
+        <div class="glow" />
+        {/if}
+    </div>
+</a>
+
 
 
 <style>

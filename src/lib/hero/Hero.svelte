@@ -29,7 +29,7 @@ on:focus={handleHover} on:blur={handleHover} role="main">
         box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8)
         , 0 30px 70px rgba(0, 0, 0, 0.5);
         cursor: pointer;
-        transition: all .1s ease;
+        transition: all .5s ease;
     }
 
     .hero:hover {
