@@ -18,7 +18,6 @@
             </slot>
         </main>
     <Menu />
-    <Twitter />
 </div>
 
 

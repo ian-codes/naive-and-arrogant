@@ -1,12 +1,8 @@
 <script>
     import Burger from "./Burger.svelte";
     import MenuItem from './MenuItem.svelte';
+    import { MENU_DATA } from "$lib/models/menu_data.js";
 
-    const menuPoints = ["Phase One", "Roadmap", "Lore", "FAQ"];
-    const decoration = ["n", "+", "a", "-"];
-
-    let slugs = menuPoints.map((mp) => mp.toLowerCase().replace(' ', '-'));
-    let menuItems = slugs.map((menuPoint, index) => [menuPoint, decoration[index]]);
 
     let isMenuOpen = false;
     let isHovered = false;
@@ -28,8 +24,8 @@
 <div class="container">
     <nav>
         <ol class:open={isMenuOpen}>
-            {#each menuItems as menuItem}
-                <MenuItem slug={menuItem[0]} deco={menuItem[1]} bind:isMenuOpen={isMenuOpen} />
+            {#each MENU_DATA as menuItem}
+                <MenuItem menuItem={menuItem} bind:isMenuOpen={isMenuOpen} />
             {/each}
         </ol>
     

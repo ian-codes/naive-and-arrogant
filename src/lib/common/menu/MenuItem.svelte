@@ -3,10 +3,9 @@
     import { page } from '$app/stores';
 
     export let isMenuOpen;
-    export let slug;
-    export let deco;
+    export let menuItem;
 
-    $: currentlyVisited = $page.url.pathname.split('/').pop() == slug;
+    $: currentlyVisited = $page.url.pathname.split('/').pop() == menuItem.slug;
 
     function handleClick() {
         isMenuOpen = false;
@@ -15,11 +14,11 @@
 
 
 <li>
-    <span class="deco" class:currently-visited={currentlyVisited}>{deco}</span>
-    <a on:click={handleClick} class:current={currentlyVisited} href="{base}/{slug}">
+    <span class="deco" class:currently-visited={currentlyVisited}>{menuItem?.deco}</span>
+    <a on:click={handleClick} class:current={currentlyVisited} href="{base}/{menuItem?.slug}">
         <div class="bg"></div>
         <span class="link">
-            {slug}
+            {menuItem?.title}
         </span>
         <span class="arrow"></span>
     </a>
