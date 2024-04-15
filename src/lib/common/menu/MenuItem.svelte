@@ -5,7 +5,7 @@
     export let isMenuOpen;
     export let menuItem;
 
-    import { language } from "$lib/stores/language.js";
+    import { language } from "$stores/language.js";
 
     $: currentlyVisited = $page.url.pathname.split('/').pop() == menuItem.slug;
 

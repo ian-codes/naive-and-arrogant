@@ -1,4 +1,7 @@
 <script>
+    import { claim_yours } from "$t";
+    import { language } from "$stores/language";
+
     let isVerified = false;
 </script>
 
@@ -6,19 +9,18 @@
 
 <section>
     <h1>
-        Claim your Physical Reward
+        {claim_yours.header[$language]}
     </h1>
 
     <p>
-        Once you have the NFT, you are eligible to receive 
-        the handmade physical reward associated with it for free.
+        {claim_yours.p1[$language]}
     </p>
 
 
     <div class="input-wrapper">
         <div>
             <button title="Paste address" class="paste icon" />
-            <input id="wallet-input" placeholder="Your Cardano wallet address">
+            <input id="wallet-input" placeholder="{claim_yours.your_wallet[$language]}">
         </div>
         <button 
             on:click={() => {isVerified = true;}}
@@ -26,13 +28,14 @@
             title="Verify NFT">
             
             <span class="unlock icon" />
-            Verify NFT
+            {claim_yours.verify_nft[$language]}
         </button>
     </div>
 
     {#if isVerified}
         <form>
-            <input placeholder="Full name" />
+            <input placeholder="First name" />
+            <input placeholder="Last name" />
             <input placeholder="Address" />
             <input placeholder="City" />
             <input placeholder="Country" />
@@ -113,7 +116,6 @@
         justify-content: center;
         text-wrap: nowrap;
         font-size: 1.2rem;
-        font-weight: bold;
         letter-spacing: 1px;
         padding: .8rem 1rem;
         color: white;

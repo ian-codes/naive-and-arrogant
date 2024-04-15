@@ -1,0 +1,26 @@
+{
+    "PHASE_ONE": {
+        "intro": {
+            "de": "500 handgemachte, <b>einzigartige</b> Stücke. <br/> Jetzt zum Minten verfügbar.",
+            "en": "500 handcrafted, <b>unique</b> pieces. <br/> Now available to mint."
+        }
+    },
+    "claim_yours": {
+        "header": {
+            "de": "Hole Dir Dein Phyisches NFT-Geschenk",
+            "en": "Claim your Physical Reward"
+        },
+        "p1": {
+            "de": "Sobald du dein NFT hast, kannst du das dazugehörige handgemachte Produkt von uns erhalten.",
+            "en": "Once you have the NFT, you are eligible to receive the handmade physical reward associated with it for free."
+        },
+        "your_wallet": {
+            "en": "Your Cardano wallet address",
+            "de": "Deine Cardano-Wallet Adresse" 
+        },
+        "verify_nft": {
+            "en": "Verify NFT",
+            "de": "NFT Verifizieren"
+        }
+    }
+}

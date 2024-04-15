@@ -1,5 +1,5 @@
 <script>
-    import { transition } from "$lib/stores/transition.js";
+    import { transition } from "$stores/transition.js";
 
     let isShown = false;
 

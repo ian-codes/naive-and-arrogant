@@ -1,6 +1,6 @@
 <script>
-    import { language } from "$lib/stores/language.js";
-    import { transition } from "$lib/stores/transition.js";
+    import { language } from "$stores/language.js";
+    import { transition } from "$stores/transition.js";
 
     export let light = false;
 

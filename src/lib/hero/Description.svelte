@@ -1,6 +1,6 @@
 <script>
-    import { language } from "$lib/stores/language.js";
-    import { PHASE_ONE } from "$lib/locales/translations.json";
+    import { language } from "$stores/language.js";
+    import { PHASE_ONE } from "$t";
 </script>
 
 
