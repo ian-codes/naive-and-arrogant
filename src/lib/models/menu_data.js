@@ -1,21 +1,33 @@
 export const MENU_DATA = [
     {
-        title: "Phase One",
+        title: {
+            en: "Phase One",
+            de: "Phase Eins"
+        },
         slug: "phase-one",
         deco: "n"
     },
     {
-        title: "Roadmap",
+        title: {
+            en: "Roadmap",
+            de: "Der Plan"
+        },
         slug: "roadmap",
         deco: "+"
     },
     {
-        title: "Lore",
+        title: {
+            en: "Lore",
+            de: "Über uns"
+        },
         slug: "lore",
         deco: "a"
     },
     {
-        title: "FAQ",
+        title: {
+            en: "FAQ",
+            de: "FAQ"
+        },
         slug: "faq",
         deco: "-"
     }

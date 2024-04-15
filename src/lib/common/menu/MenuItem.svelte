@@ -5,6 +5,8 @@
     export let isMenuOpen;
     export let menuItem;
 
+    import { language } from "$lib/stores/language.js";
+
     $: currentlyVisited = $page.url.pathname.split('/').pop() == menuItem.slug;
 
     function handleClick() {
@@ -18,7 +20,7 @@
     <a on:click={handleClick} class:current={currentlyVisited} href="{base}/{menuItem?.slug}">
         <div class="bg"></div>
         <span class="link">
-            {menuItem?.title}
+            {menuItem?.title[$language]}
         </span>
         <span class="arrow"></span>
     </a>
@@ -96,7 +98,7 @@
     }
     a:hover::after {
         animation: arrow 2s ease infinite;
-        animation-delay: .2s;
+        animation-delay: .1s;
     }
     a::after {
         position: absolute;

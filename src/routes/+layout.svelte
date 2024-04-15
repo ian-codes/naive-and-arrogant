@@ -3,7 +3,13 @@
     import Menu from "$lib/common/menu/Menu.svelte";
     import Background from "$lib/background/Background.svelte";
     import Loading from "$lib/common/Loading.svelte";
-    import Twitter from "$lib/common/Twitter.svelte";
+    import { language } from "$lib/stores/language.js";
+    import { onMount } from "svelte";
+
+
+    onMount(() => {
+        language.set(navigator.language.includes('en') ? 'en' : 'de'); 
+    });
 </script>
 
 
@@ -23,8 +29,6 @@
 
 <style>
     .outer-container {
-        padding: 0 2rem;
-        max-width: var(--max-width);
         margin: auto;
     }
 </style>

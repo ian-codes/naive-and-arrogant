@@ -1,12 +1,28 @@
+<script>
+    import { base } from "$app/paths";
+    import { onMount } from "svelte";
+    import Transition from "./Transition.svelte";
 
+    let isReady = false;
+    let random = (Math.round(Math.random() * 10)) % 2 == 0;
 
+    onMount(() => {
+        isReady = random == undefined ? false : true;
+    });
+</script>
+
+<Transition />
 <div class="outer-container">
     <div class="container">
-        <div class="img"></div>
-        <div class="logo"></div>
+        {#if isReady}
+                {#if random}
+                    <div class="logo"></div>
+                {:else}
+                    <div class="text-logo" style="background-image: url('{base}/logo/text-logo.jpeg');"></div>
+                {/if}
+        {/if}
     </div>
 </div>
-
 
 
 <style>
@@ -20,37 +36,6 @@
         pointer-events: none;
     }
 
-    .img {
-        z-index: 1;
-        display: none;
-        position: fixed;
-        inset: 0;
-        background-image: url('$lib/background/fg.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        opacity: .5;
-        
-        mix-blend-mode: luminosity;
-        filter: brightness(.5) contrast(1.2) saturate(1);
-
-        animation: img forwards 1.2s linear;
-    }
-
-    @keyframes img {
-        0% {
-            transform: rotate(1deg) scale(1.5);
-            filter: saturate(0) brightness(.8) blur(0);
-        }
-        99% {
-            transform: rotate(0deg) scale(1.2);
-            filter: saturate(1) brightness(.4) blur(30px);
-        }
-        100% {
-            display: none;
-        }
-    }
-
     .container {
         background: radial-gradient(white, rgb(225, 223, 209));
         display: flex;
@@ -58,8 +43,17 @@
         justify-content: center;
         align-items: center;
         animation: intro 1.5s forwards ease;
-
         pointer-events: none;
+    }
+
+    .text-logo {
+        z-index: 2;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        inset: 0;
+        position: fixed;
+        mix-blend-mode: darken;
     }
 
     .logo {
@@ -73,7 +67,6 @@
         border-radius: 100%;
         margin-bottom: 2rem;
         animation: spin 1s forwards ease .2s;
-
         filter: saturate(0);
     }
 
@@ -92,15 +85,17 @@
             height: 100%;
             width: 100%;
         }
-        80% {
+        60% {
             opacity: 1;
             height: 100%;
             width: 100%;
+            filter: blur(0);
         }
         99% {
             opacity: 0;
             height: 0;
             width: 0;
+            filter: blur(50px);
         }
         100% {
             opacity: 0;

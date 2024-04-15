@@ -1,11 +1,13 @@
 <script>
     import { base } from "$app/paths";
+
+    export let light = false;
 </script>
 
 
 
 <a href="{base}">
-    <div id="text-logo"></div>
+    <div class:light={light} id="text-logo"></div>
 </a>
 
 
@@ -21,6 +23,10 @@
         width: min-content;
     }
 
+    .light {
+        filter: invert(1);
+    }
+
     #text-logo {
         background-image: url('$lib/header/logo-text.png');
         background-size: contain;
@@ -28,7 +34,6 @@
         background-repeat: no-repeat;
         width: 120px;
         height: 100px;
-        mix-blend-mode: darken;
         transition: all .1s ease;
         cursor: pointer;
         /* mix-blend-mode: lighten;

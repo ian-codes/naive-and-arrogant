@@ -1,11 +1,12 @@
 <script>
     import Burger from "./Burger.svelte";
     import MenuItem from './MenuItem.svelte';
+    import LanguageSwitcher from "$lib/common/LanguageSwitcher.svelte";
     import { MENU_DATA } from "$lib/models/menu_data.js";
-
 
     let isMenuOpen = false;
     let isHovered = false;
+
 
     function handleMenuClick() {
         isMenuOpen = !isMenuOpen;
@@ -24,24 +25,23 @@
 <div class="container">
     <nav>
         <ol class:open={isMenuOpen}>
+            <LanguageSwitcher light={true} />
             {#each MENU_DATA as menuItem}
                 <MenuItem menuItem={menuItem} bind:isMenuOpen={isMenuOpen} />
             {/each}
         </ol>
     
         <button class="menu-button" class:expanded={isMenuOpen} 
-        on:click={handleMenuClick}
-        on:mouseover={handleHover}
-        on:mouseout={handleHover}
-        on:focus={handleHover}
-        on:blur={handleHover}>
+            on:click={handleMenuClick}
+            on:mouseover={handleHover}
+            on:mouseout={handleHover}
+            on:focus={handleHover}
+            on:blur={handleHover}>
             Menu
             <Burger isMenuOpen={isMenuOpen} bind:isHovered={isHovered} />
         </button>
     </nav>
 </div>
-
-
 
 
 <style>
@@ -75,14 +75,13 @@
         list-style: none;
         gap: 1em;
         width: 100%;
-
         transition: var(--transition);
         height: 0;
         opacity: 0;
     }
     ol.open {
         overflow: visible !important;
-        height: 250px !important;
+        height: 300px !important;
         width: 100% !important;
         opacity: 1 !important;
     }
