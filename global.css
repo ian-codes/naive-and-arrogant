@@ -11,8 +11,15 @@
 
 :root {
     font-size: 18px;
-    --max-width: 500px;
-    --clr-main: rgb(210, 1, 39);
+    --max-width: 700px;
+
+    --clr-main: rgb(18, 190, 248);
+    --clr-2: rgb(9, 116, 217);
+    --gradient-main: linear-gradient(var(--clr-main), var(--clr-2));
+    --gradient-main-h: linear-gradient(90deg, var(--clr-main), var(--clr-2));
+
+    --transition: all .5s ease;
+    --transition-fast: all .2s ease;
 }
 
 body {
@@ -26,14 +33,41 @@ body {
 button {
     background: none;
     border: none;
-    font-family: inherit;
+    cursor: pointer;
+    font-family: "Inter", Arial;
+}
+
+.flex-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-r {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
 *::selection {
-    color: red;
+    color: var(--clr-main);
+    background: rgba(0, 0, 0, 0.836);
 }
 
 a {
     color: black;
     text-decoration: none;
+}
+
+p {
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    margin: 1rem 0;
 }
