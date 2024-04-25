@@ -22,7 +22,7 @@
     <div class="backdrop" on:click={() => {isMenuOpen = false}}></div>
 {/if}
 
-<div class="container">
+<div class="cntnr">
     <nav>
         <ol class:open={isMenuOpen}>
             <LanguageSwitcher light={true} />
@@ -45,7 +45,7 @@
 
 
 <style>
-    .container {
+    .cntnr {
         z-index: 3;
         bottom: 0;
         width: 100%;
@@ -138,7 +138,7 @@
     .backdrop {
         position: absolute;
         inset: 0;
-        z-index: 1;
+        z-index: 2;
         background: black;
         animation: backdrop forwards ease .4s;
     }

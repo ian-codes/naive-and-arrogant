@@ -7,17 +7,11 @@
 
 
 <a href="{base}">
-    <div class:light={light} id="text-logo"></div>
+    <div class="dark:invert w-28 h-20 sm:w-32 sm:h-24" class:light={light} id="text-logo"></div>
 </a>
 
 
 <style>
-    @media screen and (max-width: 1100px) {
-        #text-logo {
-            width: 20px;
-        }
-    }
-
     a {
         display: inline-flex;
         width: min-content;
@@ -32,8 +26,6 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        width: 120px;
-        height: 100px;
         transition: all .1s ease;
         cursor: pointer;
         /* mix-blend-mode: lighten;
@@ -42,5 +34,9 @@
 
     #text-logo:hover {
         filter: drop-shadow(5px 5px 0 rgba(0, 0, 0, 0.436));
+    }
+
+    .light:hover {
+        filter: invert(1) drop-shadow(5px 5px 0 rgba(111, 209, 255, 0.436)) !important;
     }
 </style>

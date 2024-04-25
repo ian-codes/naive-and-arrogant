@@ -11,9 +11,10 @@
     });
 </script>
 
+
 <Transition />
 <div class="outer-container">
-    <div class="container">
+    <div class="cntnr">
         {#if isReady}
                 {#if random}
                     <div class="logo"></div>
@@ -27,7 +28,7 @@
 
 <style>
     .outer-container {
-        z-index: 20;
+        z-index: 99;
         position: fixed;
         inset: 0;
         display: flex;
@@ -36,7 +37,7 @@
         pointer-events: none;
     }
 
-    .container {
+    .cntnr {
         background: radial-gradient(white, rgb(225, 223, 209));
         display: flex;
         flex-direction: column;

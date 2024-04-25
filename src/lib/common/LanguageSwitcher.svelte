@@ -14,18 +14,14 @@
 </script>
 
 
-<div class:light={light} class="flex-r">
-    <button class:active={$language == 'en'} on:click={() => handleChange('en')}>EN</button>
+<div class:light={light} class="dark:text-white text-s flex-r gap-0 sm:gap-0.5">
+    <button class="p-2" class:active={$language == 'en'} on:click={() => handleChange('en')}>EN</button>
     <span class="divider">|</span>
-    <button class:active={$language == 'de'} on:click={() => handleChange('de')}>DE</button>
+    <button class="p-2" class:active={$language == 'de'} on:click={() => handleChange('de')}>DE</button>
 </div>
 
 
 <style>
-    div {
-        gap: .3em;
-    }
-
     .divider {
         opacity: .3;
     }
@@ -39,7 +35,6 @@
     }
 
     button {
-        padding: 1em;
         aspect-ratio: 1;
         opacity: .4;
         letter-spacing: 2px;

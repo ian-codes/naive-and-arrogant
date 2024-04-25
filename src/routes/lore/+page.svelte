@@ -4,7 +4,7 @@
 </svelte:head>
 
 
-<h1>
+<!-- <h1>
     About the Team
 </h1>
 
@@ -51,7 +51,7 @@
         his words would be understandable to all social groups and could have a 
         positive effect. He believes in the idea of Naive&Arrogant
     </p>
-</div>
+</div> -->
 
 
 <style>

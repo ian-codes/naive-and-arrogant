@@ -1,4 +1,5 @@
 <script>
+    import "../app.css";
     import Header from "$lib/header/Header.svelte";
     import Menu from "$lib/common/menu/Menu.svelte";
     import Background from "$lib/background/Background.svelte";
@@ -16,9 +17,9 @@
 <Loading />
 <Background />
 
-<div class="outer-container">
+<div class="dark:bg-slate-700 outer-container min-h-dvh">
     <Header />
-        <main>
+        <main class="p-4">
             <slot>
         
             </slot>

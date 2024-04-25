@@ -1,6 +1,6 @@
 <script>
     import LanguageSwitcher from "../common/LanguageSwitcher.svelte";
-    import Logo from "./Logo.svelte";
+    import ThemeSwitcher from "../common/ThemeSwitcher.svelte";
     import LogoText from "./LogoText.svelte";
 
     import { onMount } from 'svelte';
@@ -16,89 +16,28 @@
 </script>
 
 
-<header class:sticky={isSticky}>
+<header class="sm:mb-8 mb-4 px-4 shadow-sm dark:shadow-slate-800" class:sticky={isSticky}>
     <div>
         <LogoText light={isSticky} />
-        <LanguageSwitcher light={isSticky} />
+        <div class="flex flex-row items-center gap-2">
+            <ThemeSwitcher light={isSticky} />
+            <LanguageSwitcher light={isSticky} />
+        </div>
     </div>
 </header>
 
-<!-- <div class="bg" class:sticky={isSticky}>
-    <div class="stroke stroke-left" class:strokeSticky={isSticky}></div>
-    <div class="stroke stroke-right" class:strokeSticky={isSticky}></div>
-    <div class="container">
-        <LogoText light={isSticky} />
-        <LanguageSwitcher light={isSticky} />
-    </div>
-</div> -->
-
 
 <style>
-    /* .sticky {
-        position: fixed;
-        top: 0;
-        height: 100px;
-        z-index: 30;
-        width: 50%;
-        position: relative;
-        margin: 0 auto;
-        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.219));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all .3s ease;
-    }
-    .sticky .container, .bg .container {
-        width: 80%;
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 5em;
-        z-index: 90;
-        transition: all .3s ease;
-    }
-    .stroke {
-        position: absolute;
-        opacity: 0;
-        mask-image: url("/img/stroke.png");
-        mask-mode: alpha;
-        mask-repeat: no-repeat;
-        mask-position: center;
-        mask-size: contain;
-        width: 100%;
-        height: 100%;
-        transition: all .3s ease;
-    }
-    .strokeSticky {
-        opacity: .95;
-    }
-    .stroke-left {
-        background: linear-gradient(120deg, rgb(52, 135, 202), rgb(31, 43, 145));
-        transform: rotateY(180deg);
-        left: -10em;
-
-    }
-    .stroke-right {
-        background: linear-gradient(120deg, rgb(76, 128, 196), 50%, rgb(14, 140, 199));
-        right: -10em;
-        mix-blend-mode: darken;
-    } */
-
-
     header {
         position: relative;
         background: transparent;
-        z-index: 50;
+        z-index: 1;
         width: 100%;
-        padding: 0 2rem;
-        margin-bottom: 2rem;
         transition: var(--transition);
     }
 
-    header div {
-        max-width: 900px;
+    header > div {
+        max-width: 800px;
         margin: auto;
         display: flex;
         align-items: center;
