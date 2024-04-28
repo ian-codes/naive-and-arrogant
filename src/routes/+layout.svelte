@@ -17,12 +17,12 @@
 <Loading />
 <Background />
 
-<div class="dark:bg-slate-700 outer-container min-h-dvh">
+<div class="dark:bg-slate-700 min-h-dvh">
     <Header />
-        <main class="p-4">
-            <slot>
-        
-            </slot>
+        <main>
+            <div class="outer-container">
+                <slot />
+            </div>
         </main>
     <Menu />
 </div>
@@ -30,6 +30,7 @@
 
 <style>
     .outer-container {
+        max-width: var(--max-width);
         margin: auto;
     }
 </style>
