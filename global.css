@@ -3,6 +3,10 @@
     src: url("font/Inter_Tight/InterTight-VariableFont_wght.ttf");
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
