@@ -77,10 +77,12 @@
         gap: .5em;
         transition: var(--transition);
         opacity: 0;
+        height: 0;
     }
     ol.open {
         overflow: visible !important;
         opacity: 1 !important;
+        height: auto !important;
     }
     .menu-button {
         z-index: 5;

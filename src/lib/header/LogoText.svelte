@@ -7,7 +7,7 @@
 
 
 <a href="{base}">
-    <div class="dark:invert w-28 h-20 sm:w-32 sm:h-24" class:light={light} id="text-logo"></div>
+    <div class="dark:invert w-28 h-20 sm:w-32 sm:h-20" class:light={light} id="text-logo"></div>
 </a>
 
 
