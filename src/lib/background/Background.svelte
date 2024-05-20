@@ -24,6 +24,6 @@
         background-position: center;
         opacity: .2;
         filter: contrast(1.2) brightness(.9) saturate(2);
-        height: 200vh;
+        height: 200dvh;
     }
 </style>
