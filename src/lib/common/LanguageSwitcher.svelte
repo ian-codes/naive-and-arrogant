@@ -15,9 +15,9 @@
 
 
 <div class:light={light} class="dark:text-white text-s flex-r gap-0 sm:gap-0.5">
-    <button class="p-2" class:active={$language == 'en'} on:click={() => handleChange('en')}>EN</button>
+    <button class="p-1" class:active={$language == 'en'} on:click={() => handleChange('en')}>EN</button>
     <span class="divider">|</span>
-    <button class="p-2" class:active={$language == 'de'} on:click={() => handleChange('de')}>DE</button>
+    <button class="p-1" class:active={$language == 'de'} on:click={() => handleChange('de')}>DE</button>
 </div>
 
 

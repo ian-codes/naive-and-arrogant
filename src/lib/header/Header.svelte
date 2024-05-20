@@ -16,10 +16,10 @@
 </script>
 
 
-<header class="sm:mb-8 mb-4 px-4 shadow-sm dark:shadow-slate-800" class:sticky={isSticky}>
+<header class="sm:mb-8 mb-4 px-4 shadow-sm dark:shadow-slate-200" class:sticky={isSticky}>
     <div>
         <LogoText light={isSticky} />
-        <div class="flex flex-row items-center gap-2">
+        <div class="flex flex-row items-center gap-4">
             <ThemeSwitcher light={isSticky} />
             <LanguageSwitcher light={isSticky} />
         </div>
@@ -35,7 +35,6 @@
         width: 100%;
         transition: var(--transition);
     }
-
     header > div {
         max-width: 800px;
         margin: auto;
@@ -44,7 +43,6 @@
         justify-content: space-between;
         position: relative;
     }
-
     header::before {
         position: absolute;
         margin: auto;
@@ -56,12 +54,10 @@
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         transition: var(--transition);
     }
-
     .sticky {
         position: sticky;
         top: 0;
     }
-
     header.sticky::before {
         opacity: .95 !important;
     }

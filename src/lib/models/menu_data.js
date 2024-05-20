@@ -17,16 +17,16 @@ export const MENU_DATA = [
     },
     {
         title: {
-            en: "Lore",
-            de: "Über uns"
+            en: "Member Area",
+            de: "Mitgliederbereich"
         },
         slug: "lore",
         deco: "a"
     },
     {
         title: {
-            en: "FAQ",
-            de: "FAQ"
+            en: "FAQ You",
+            de: "FAQ You"
         },
         slug: "faq",
         deco: "-"

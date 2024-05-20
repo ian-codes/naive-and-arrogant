@@ -17,7 +17,8 @@
 <Loading />
 <Background />
 
-<div class="dark:bg-slate-700 min-h-dvh">
+
+<div class="dark:bg-black min-h-dvh">
     <Header />
         <main>
             <div class="outer-container">

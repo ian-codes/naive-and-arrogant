@@ -9,16 +9,13 @@
         position: fixed;
         inset: 0;
     }
-
     .sides {
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.1), transparent 2.5% 97.5%, rgba(0, 0, 0, 0.1));
     }
-
     .vignette {
 
         background: radial-gradient(transparent 80%, rgba(85, 78, 68, 0.164));
     }
-
     .bg-texture {
         z-index: -5;
         background-image: url('$lib/background/bg.jpg');

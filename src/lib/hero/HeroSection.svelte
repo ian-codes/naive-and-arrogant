@@ -4,7 +4,6 @@
 </script>
 
 
-
 <section class="hero-container">
     <Description />
     <Hero />

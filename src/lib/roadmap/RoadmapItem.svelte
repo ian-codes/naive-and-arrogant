@@ -1,13 +1,18 @@
 <script>
+    import { goto } from "$app/navigation";
+    import { page } from "$app/stores";
     import { onMount } from "svelte";
+    import Arrow from "./Arrow.svelte";
 
     export let item;
     export let index;
     export let lastIndex;
+    export let nextItemId;
+
+    const thisUrl = $page.url.pathname;
+
     let isLast = index == lastIndex;
-
     let isOdd = index % 2 == 1;
-
     let started = false;
 
     onMount(() => {
@@ -16,7 +21,6 @@
         }, 500)
     });
 
-    
     function actionWhenInViewport(e) {
         const observer = new IntersectionObserver(entries => {
             if(entries[0].isIntersecting) {
@@ -29,31 +33,29 @@
         observer.observe(e);
     }
 
-
-    function handleNext(nextId) {
-        if (isLast) {
-            nextId = "start";
-        }
-        console.log(nextId);
-        document.getElementById(nextId).scrollIntoView();
+    function handleNext() {
+        goto(`${thisUrl}#${nextItemId}`);
     }
 </script>
 
 
 <li use:actionWhenInViewport
-    id="#q{index}"
+    id="{item.title}"
     class="wrapper py-32 relative overflow-x-hidden min-h-dvh dark:text-white flex flex-col {(isOdd ? "odd items-start" : "even items-end")}">
     
     <h2 class="{(isOdd ? "h2-odd right-2" : "h2-even left-6")} 
-        inline text-3xl absolute dark:!mix-blend-luminosity mix-blend-color font-bold tracking-widest uppercase">
+        inline text-3xl absolute dark:text-white
+        font-bold tracking-widest uppercase">
         {item.title}
     </h2>
 
-    <ol class="points-wrapper text-lg w-max">
+    <ol class="points-wrapper flex flex-col gap-2 text-lg w-max">
         {#each item.points as point, i}
             <li class:started={started} 
                 style="transition-delay: {i * 300}ms"
-                class="point px-4 max-w-xs bg-[#3e99ce] bg-opacity-65 py-4">
+                class="point px-6 max-w-md
+                  uppercase font-semibold text-sm bg-black text-white
+                 dark:bg-white dark:text-black py-4">
 
                 {point}
             </li>
@@ -62,10 +64,11 @@
 
     <div
         class="btn-wrapper mt-10 w-full flex flex-col items-center justify-center">
-        <button on:click={() => handleNext(`#q${index+1}`)}
+        <button on:click={handleNext}
             style="transition-delay: {item.points.length * 300}ms"
-            class:last={isLast}
-            class="hover:scale-110 transition-all" />
+            class:last={isLast}>
+           <Arrow />
+        </button>
     </div>
 </li>
 
@@ -93,7 +96,6 @@
         filter: blur(0);
         opacity: 1;
         transform: scaleX(1) !important;
-        outline: white 1px solid;
     }
     .wrapper.alive .btn-wrapper button {
         filter: blur(0);
@@ -108,16 +110,11 @@
     }
     button {
         filter: blur(5em);
-        background-image:  url("$lib/common/menu/arrow.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        transform: rotate(90deg);
-        width: 2em;
-        height: 2em;
+        width: 3em;
+        height: 3em;
         transition: all ease-in-out .5s;
     }
     button.last {
-        transform: rotate(-90deg) !important;
+        transform: rotate(180deg) !important;
     }
 </style>
