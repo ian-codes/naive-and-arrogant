@@ -7,7 +7,6 @@
     let isMenuOpen = false;
     let isHovered = false;
 
-
     function handleMenuClick() {
         isMenuOpen = !isMenuOpen;
     }
@@ -24,14 +23,17 @@
 
 <div class="cntnr">
     <nav>
-        <ol class:open={isMenuOpen}>
+        <ol class:open={isMenuOpen}
+            class="w-max">
             <LanguageSwitcher light={true} />
             {#each MENU_DATA as menuItem}
                 <MenuItem menuItem={menuItem} bind:isMenuOpen={isMenuOpen} />
             {/each}
         </ol>
     
-        <button class="menu-button" class:expanded={isMenuOpen} 
+        <button class="menu-button text-black bg-white outline
+             outline-black outline-2" 
+            class:expanded={isMenuOpen} 
             on:click={handleMenuClick}
             on:mouseover={handleHover}
             on:mouseout={handleHover}
@@ -64,25 +66,20 @@
         justify-content: center;
         align-items: center;
         padding: 0 1em;
-        gap: 2em;
+        gap: .6em;
     }
     ol {
         font-size: 1em;
         overflow: hidden;
+        list-style: none;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        list-style: none;
-        gap: 1em;
-        width: 100%;
+        gap: .5em;
         transition: var(--transition);
-        height: 0;
         opacity: 0;
     }
     ol.open {
         overflow: visible !important;
-        height: 300px !important;
-        width: 100% !important;
         opacity: 1 !important;
     }
     .menu-button {
@@ -91,42 +88,13 @@
         font-size: .8rem;
         text-transform: uppercase;
         font-weight: bold;
-        color: white;
-        padding: 1em;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        padding: .5em;
         cursor: pointer;
         transition: all .2s ease;
     }
     .menu-button.expanded {
         padding: 1em 3em;
         border-radius: 0;
-        background: black;
-        color: white;
-    }
-
-    .menu-button::before {
-        z-index: -4;
-        content: '';
-        top: -2px;
-        left: -2px;
-        position: absolute;
-        height: calc(100% + 4px);
-        width: calc(100% + 4px);
-        background: var(--gradient-main);
-    }
-    
-    .menu-button::after {
-        z-index: -3;
-        position: absolute;
-        bottom: 0;
-        inset: 0;
-        content: '';
-        background: black;
-
-        opacity: 1;
-        width: 100%;
-        height: 100%;
-        transition: all .3s ease;
     }
     .menu-button:hover::after {
         opacity: 0;
@@ -134,7 +102,6 @@
         right: 50%;
         left: 50%;
     }
-
     .backdrop {
         position: absolute;
         inset: 0;

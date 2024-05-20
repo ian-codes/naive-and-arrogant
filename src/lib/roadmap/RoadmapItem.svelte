@@ -54,7 +54,7 @@
             <li class:started={started} 
                 style="transition-delay: {i * 300}ms"
                 class="point px-6 max-w-md
-                  uppercase font-semibold text-sm bg-black text-white
+                  uppercase font-semibold text-base bg-black text-white
                  dark:bg-white dark:text-black py-4">
 
                 {point}

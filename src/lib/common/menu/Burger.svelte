@@ -5,8 +5,11 @@
 
 
 <div id="burger" class:open={isMenuOpen}>
-    {#each {length: 3} as _}
-        <span class:dots={isMenuOpen} class:hover={isHovered} class="line"></span>
+    {#each {length: 4} as _}
+        <span 
+            class:dots={isMenuOpen} 
+            class:hover={isHovered} 
+            class="line bg-black" />
     {/each}
 </div>
 
@@ -18,20 +21,18 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
     .open {
         flex-direction: row !important;
     }
     .line {
-        background: white;
         width: 100%;
         height: 2px;
         transition: var(--transition-fast);
     }
     .dots {
-        background: white;
-        width: 2px;
-        border-radius: 100%;
+        width: 5px;
+        height: 5px;
     }
 </style>

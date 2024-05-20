@@ -16,7 +16,7 @@
 </script>
 
 
-<header class="sm:mb-8 mb-4 px-4 shadow-sm dark:shadow-slate-200" class:sticky={isSticky}>
+<header class="sm:mb-8 mb-4 px-2 shadow-sm dark:shadow-slate-200" class:sticky={isSticky}>
     <div>
         <LogoText light={isSticky} />
         <div class="flex flex-row items-center gap-4">
@@ -50,8 +50,8 @@
         inset: 0;
         z-index: -1;
         opacity: 0;
-        background: linear-gradient(120deg, rgb(67, 177, 228), rgb(31, 43, 145));
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.797);
         transition: var(--transition);
     }
     .sticky {
