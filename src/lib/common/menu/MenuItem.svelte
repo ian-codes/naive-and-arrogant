@@ -15,11 +15,16 @@
 </script>
 
 
-<li class="px-2 inline-block relative bg-white outline outline-black outline-2">
-    <span class="deco absolute -left-8" 
-    class:currently-visited={currentlyVisited}>{menuItem?.deco}</span>
+<li class="px-2 flex relative bg-white dark:bg-black dark:outline-white outline 
+    outline-black outline-[6px]">
+    <!-- <span class="deco absolute -left-8" 
+        class:currently-visited={currentlyVisited}>
+        {menuItem?.deco}
+    </span> -->
+
     <a on:click={handleClick} class:current={currentlyVisited} href="{base}/{menuItem?.slug}"
-        class="text-black font-bold tracking-widest">
+        class="text-black dark:text-white w-full text-center font-extrabold 
+            tracking-widest">
 
         <div class="bg" />
         <span class="link">

@@ -14,8 +14,8 @@
 </script>
 
 
-<Loading />
-<Background />
+<!-- <Loading /> -->
+<!-- <Background /> -->
 
 
 <div class="dark:bg-black min-h-dvh">
