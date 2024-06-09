@@ -16,7 +16,7 @@
 
 
 <li class="px-2 inline-block relative dark:invert bg-white outline outline-black outline-[6px]">
-    <span class="deco absolute uppercase -left-16 bg-white outline outline-black 
+    <span class="deco absolute uppercase -left-14 bg-white outline outline-black 
          h-full aspect-square font-extrabold flex items-center justify-center outline-[6px]" 
         class:visible={currentlyVisited}>
         {menuItem?.deco}

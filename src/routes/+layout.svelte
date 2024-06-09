@@ -2,7 +2,6 @@
     import "../app.css";
     import Header from "$lib/header/Header.svelte";
     import Menu from "$lib/common/menu/Menu.svelte";
-    import Background from "$lib/background/Background.svelte";
     import Loading from "$lib/common/Loading.svelte";
     import { language } from "$lib/stores/language.js";
     import { onMount } from "svelte";
@@ -14,9 +13,7 @@
 </script>
 
 
-<!-- <Loading /> -->
-<!-- <Background /> -->
-
+<Loading />
 
 <div class="dark:bg-black min-h-dvh">
     <Header />

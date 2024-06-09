@@ -43,6 +43,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        bottom: 0;
         animation: intro 1.5s forwards ease;
         pointer-events: none;
     }
@@ -95,7 +96,7 @@
         99% {
             opacity: 0;
             height: 0;
-            width: 0;
+            width: 100%;
             filter: blur(50px);
         }
         100% {

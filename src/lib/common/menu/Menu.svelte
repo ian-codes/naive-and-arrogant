@@ -25,6 +25,9 @@
     <nav>
         <ol class:open={isMenuOpen}
             class="w-max">
+            <div class="flex mt-8 justify-center items-center">
+                <ThemeSwitcher />
+            </div>
             {#each MENU_DATA as menuItem}
                 <MenuItem menuItem={menuItem} bind:isMenuOpen={isMenuOpen} />
             {/each}
