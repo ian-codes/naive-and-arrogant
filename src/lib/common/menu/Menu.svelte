@@ -18,7 +18,7 @@
 
 
 {#if isMenuOpen}
-    <div class="backdrop" on:click={() => {isMenuOpen = false}}></div>
+    <div class="dark:invert backdrop" on:click={() => {isMenuOpen = false}}></div>
 {/if}
 
 <div class="cntnr">
@@ -46,6 +46,11 @@
 
 
 <style>
+    button:hover {
+        scale: 1.05;
+        transform-origin: bottom;
+        transition: all .2s ease;
+    }
     .cntnr {
         z-index: 3;
         bottom: 0;
@@ -106,7 +111,7 @@
         position: absolute;
         inset: 0;
         z-index: 2;
-        background: black;
+        background: white;
         animation: backdrop forwards ease .4s;
     }
     @keyframes backdrop {
