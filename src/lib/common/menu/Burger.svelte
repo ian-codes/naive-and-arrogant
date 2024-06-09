@@ -9,14 +9,14 @@
         <span 
             class:dots={isMenuOpen} 
             class:hover={isHovered} 
-            class="line bg-black" />
+            class="line bg-black dark:bg-white" />
     {/each}
 </div>
 
 
 <style>
     #burger {
-        height: 20px;
+        height: 25px;
         width: 40px;
         display: flex;
         flex-direction: column;
@@ -28,7 +28,7 @@
     }
     .line {
         width: 100%;
-        height: 2px;
+        height: 4px;
         transition: var(--transition-fast);
     }
     .dots {

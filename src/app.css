@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .darkHeader {
+        box-shadow: 10px 10px 0 3px rgb(255, 255, 255) !important;
+    }
+}

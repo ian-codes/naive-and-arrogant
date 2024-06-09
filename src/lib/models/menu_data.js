@@ -18,7 +18,7 @@ export const MENU_DATA = [
     {
         title: {
             en: "Member Area",
-            de: "Mitgliederbereich"
+            de: "Mitglieder"
         },
         slug: "lore",
         deco: "a"

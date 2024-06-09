@@ -30,8 +30,8 @@
             {/each}
         </ol>
     
-        <button class="menu-button text-black bg-white outline
-             outline-black outline-2" 
+        <button class="menu-button font-extrabold text-black bg-white outline
+            outline-black outline-[6px] dark:outline-white dark:bg-black dark:text-white" 
             class:expanded={isMenuOpen} 
             on:click={handleMenuClick}
             on:mouseover={handleHover}
@@ -65,7 +65,7 @@
         justify-content: center;
         align-items: center;
         padding: 0 1em;
-        gap: .6em;
+        gap: 2em;
     }
     ol {
         font-size: 1em;
@@ -73,7 +73,7 @@
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: .5em;
+        gap: 1.4em;
         transition: var(--transition);
         opacity: 0;
         height: 0;
@@ -88,7 +88,6 @@
         position: relative;
         font-size: .8rem;
         text-transform: uppercase;
-        font-weight: bold;
         padding: .5em;
         cursor: pointer;
         transition: all .2s ease;

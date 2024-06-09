@@ -16,7 +16,8 @@
 </script>
 
 
-<header class="sm:mb-8 mb-4 px-2 shadow-sm dark:shadow-slate-200" class:sticky={isSticky}>
+<header class="sm:mb-8 mb-4 px-2 outline-6 outline-white" 
+    class:sticky={isSticky}>
     <div>
         <LogoText light={isSticky} />
         <div class="flex flex-row items-center gap-4">

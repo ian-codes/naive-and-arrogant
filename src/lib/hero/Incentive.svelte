@@ -4,7 +4,9 @@
 
 
 <a class:hover={isHovered} 
-    class="call-to-action bg-white px-8 py-4 font-bold outline outline-black outline-2"
+    class="call-to-action dark:bg-black dark:text-white 
+        bg-white px-8 py-4 font-bold outline 
+        outline-black dark:outline-white outline-[6px]"
     href="#">
     MINT NOW
 </a>

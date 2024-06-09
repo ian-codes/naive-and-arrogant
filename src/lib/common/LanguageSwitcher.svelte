@@ -5,51 +5,41 @@
     export let light = false;
 
     function handleChange(lang) {
-        transition.set($transition += 1);
+        // transition.set($transition += 1);
 
-        setTimeout(() => {
-            language.set(lang);
-        }, 1000);
+        // setTimeout(() => {
+        //     language.set(lang);
+        // }, 1000);
+        language.set(lang);
     }
 </script>
 
 
-<div class:light={light} class="dark:text-white text-s flex-r gap-0 sm:gap-0.5">
+<div class:light={light} class="dark:text-white h-5 text-s flex-r gap-0 sm:gap-[5px]">
     <button class="p-1" class:active={$language == 'en'} on:click={() => handleChange('en')}>EN</button>
-    <span class="divider">|</span>
+    <span class="divider block bg-black dark:bg-white w-[3px] h-full" />
     <button class="p-1" class:active={$language == 'de'} on:click={() => handleChange('de')}>DE</button>
 </div>
 
 
 <style>
-    .divider {
-        opacity: .3;
-    }
-
     .light, .light button {
         color: white !important;
     }
 
-    .light .active {
-        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5) !important;
+    .light .divider {
+        background: white;
     }
 
     button {
+        font-weight: bolder;
         aspect-ratio: 1;
-        opacity: .4;
+        opacity: .3;
         letter-spacing: 2px;
         background: none;
-        transition: all .3s ease;
-    }
-
-    button:hover {
-        background: rgba(128, 128, 128, 0.24);
-        box-shadow: -2px 3px 1px rgba(0, 0, 0, 0.26);
     }
 
     .active {
-        font-weight: bold;
         opacity: 1;
-        text-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
     }
 </style>
