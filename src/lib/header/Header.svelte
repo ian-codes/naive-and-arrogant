@@ -21,7 +21,6 @@
         <LogoText light={isSticky} />
         <div class="flex flex-row items-center gap-4">
             <ThemeSwitcher light={isSticky} />
-            <LanguageSwitcher light={isSticky} />
         </div>
     </div>
 </header>

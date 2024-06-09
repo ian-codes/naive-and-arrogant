@@ -1,7 +1,7 @@
 <script>
     import Burger from "./Burger.svelte";
     import MenuItem from './MenuItem.svelte';
-    import LanguageSwitcher from "$lib/common/LanguageSwitcher.svelte";
+    import ThemeSwitcher from "$lib/common/ThemeSwitcher.svelte";
     import { MENU_DATA } from "$lib/models/menu_data.js";
 
     let isMenuOpen = false;
@@ -25,7 +25,6 @@
     <nav>
         <ol class:open={isMenuOpen}
             class="w-max">
-            <LanguageSwitcher light={true} />
             {#each MENU_DATA as menuItem}
                 <MenuItem menuItem={menuItem} bind:isMenuOpen={isMenuOpen} />
             {/each}

@@ -16,10 +16,13 @@
 
 
 <li class="px-2 inline-block relative bg-white outline outline-black outline-2">
-    <span class="deco absolute -left-8" 
-    class:currently-visited={currentlyVisited}>{menuItem?.deco}</span>
+    <span class="deco absolute uppercase -left-14 bg-white outline outline-black 
+        outline-2 h-full aspect-square flex items-center justify-center" 
+        class:visible={currentlyVisited}>
+        {menuItem?.deco}
+    </span>
     <a on:click={handleClick} class:current={currentlyVisited} href="{base}/{menuItem?.slug}"
-        class="text-black font-bold tracking-widest">
+        class="text-black block w-full text-center font-bold tracking-widest">
 
         <div class="bg" />
         <span class="link">
@@ -29,7 +32,7 @@
 </li>
 
 
-<style>
+<style lang="postcss">
     li {
         display: flex;
         flex-direction: row;
@@ -37,15 +40,17 @@
         gap: 1em;
     }
     .deco {
-        text-transform: lowercase;
-        color: gray;
-        font-size: 1.5rem;
-        opacity: .8;
+        transform: scaleX(0);
+        opacity: 0;
+        transform-origin: right;
+        transition: all .1s ease-out;
     }
-    .deco.currently-visited {
-        color: white;
-        font-weight: bolder;
+    .deco.visible, li:hover .deco {
+        pointer-events: none;
+        color: black;
         opacity: 1;
+        font-weight: bolder;
+        transform: scaleX(1);
     }
     a {
         position: relative;
@@ -55,7 +60,6 @@
         padding: .8em 1em;
         transition: var(--transition);
     }
-
     .link {
         z-index: 3;
     }
